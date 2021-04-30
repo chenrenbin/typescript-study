@@ -1,0 +1,20 @@
+{
+  "name": "typescript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "tsc index.ts",
+    "basics-dataType": "tsc ./Basics/dataType/index.ts",
+    "basics-any": "tsc ./Basics/any/index.ts",
+    "basics-typeInference": "tsc ./Basics/typeInference/index.ts",
+    "basics-unionTypes": "tsc ./Basics/unionTypes/index.ts",
+    "basics-interfaces": "tsc ./Basics/interfaces/index.ts",
+    "basics-arrType": "tsc ./Basics/arrType/index.ts",
+    "basics-functionType": "tsc ./Basics/functionType/index.ts",
+    "basics-typeAssertion": "tsc ./Basics/typeAssertion/index.ts",
+    "basics-defaultType": "tsc ./Basics/defaultType/index.ts"
+  },
+  "author": "chenrenbin",
+  "license": "ISC"
+}
