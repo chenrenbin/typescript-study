@@ -13,7 +13,8 @@
     "basics-arrType": "tsc ./Basics/arrType/index.ts",
     "basics-functionType": "tsc ./Basics/functionType/index.ts",
     "basics-typeAssertion": "tsc ./Basics/typeAssertion/index.ts",
-    "basics-defaultType": "tsc ./Basics/defaultType/index.ts"
+    "basics-defaultType": "tsc ./Basics/defaultType/index.ts",
+    "basics-declarationFile": "tsc ./Basics/declarationFile/index.ts"
   },
   "author": "chenrenbin",
   "license": "ISC"

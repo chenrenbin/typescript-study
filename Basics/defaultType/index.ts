@@ -5,7 +5,7 @@
 
 // 1. ECMAScript 的内置对象
   // Boolean、Error、Date、RegExp等
-  // 们可以在 TypeScript 中将变量定义为这些类型：
+  // 我们可以在 TypeScript 中将变量定义为这些类型：
   let b: Boolean = new Boolean(1);
   let e: Error = new Error('Error occurred');
   let d: Date = new Date();
