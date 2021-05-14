@@ -5,14 +5,17 @@
   "main": "index.js",
   "scripts": {
     "test": "tsc index.ts",
+    "基本类型": "",
     "basics-dataType": "tsc ./Basics/dataType/index.ts",
     "basics-any": "tsc ./Basics/any/index.ts",
     "basics-typeInference": "tsc ./Basics/typeInference/index.ts",
     "basics-unionTypes": "tsc ./Basics/unionTypes/index.ts",
+    "引用类型": "",
     "basics-interfaces": "tsc ./Basics/interfaces/index.ts",
     "basics-arrType": "tsc ./Basics/arrType/index.ts",
     "basics-functionType": "tsc ./Basics/functionType/index.ts",
     "basics-typeAssertion": "tsc ./Basics/typeAssertion/index.ts",
+    "声明文件相关": "",
     "basics-defaultType": "tsc ./Basics/defaultType/index.ts",
     "basics-declarationFile": "tsc ./Basics/declarationFile/index.ts"
   },

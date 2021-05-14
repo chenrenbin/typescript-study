@@ -1,6 +1,6 @@
 /*
-* 内置对象
-* avaScript 中有很多内置对象，它们可以直接在 TypeScript 中当做定义好了的类型
+* 9、内置对象
+* JavaScript 中有很多内置对象，它们可以直接在 TypeScript 中当做定义好了的类型
 */
 
 // 1. ECMAScript 的内置对象

@@ -1,5 +1,5 @@
 /*
-* 任意值
+* 2、任意值
 * 任意值（Any）用来表示允许赋值为任意类型。
 */
 
@@ -7,11 +7,11 @@
 // let str: string = 'seven';
 // str = 7  // Type 'number' is not assignable to type 'string'.
 
-// 2.如果是 any 类型，则允许被赋值为任意类型
+// 2.但如果是 any 类型，则允许被赋值为任意类型
 let age: any = 'seven'
 age = 7
 
-// 3.任意值上访问任何属性都是允许的
+// 3.任意值上访问任何属性都是允许的，可以编译通过
 let age1: any = 'chenrenbin'
 console.log(age1.myAge)
 console.log(age1.myAge.lastAge)
@@ -22,3 +22,4 @@ something = 'seven'
 something = 7
 something.setName('chrb')
 
+// TypeScript的叛逆分子，最好只在定义复杂类型需要时使用；尽量不使用，可在tsconfig中进行配置

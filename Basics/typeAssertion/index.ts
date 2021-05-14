@@ -1,10 +1,10 @@
 /*
-* 类型断言
+* 8、类型断言
 * 类型断言（Type Assertion）可以用来手动指定一个值的类型
 * 语法：1. 值 as 类型  2.<类型>值
 */
  
-// 形如 <Foo> 的语法在 tsx 中表示的是一个 ReactNode，在 ts 中除了表示类型断言之外，也可能是表示一个泛型，故建议大家在使用类型断言时，统一使用 值 as 类型 这样的语法
+// 形如 <Foo> 的语法在 tsx 中表示的是一个 Node，在 ts 中除了表示类型断言之外，也可能是表示一个泛型，故建议大家在使用类型断言时，统一使用 值 as 类型 这样的语法
 
 // 一、 用途：
 // 1. 将一个联合类型断言为其中一个类型
@@ -62,19 +62,6 @@
   }
   // 上面的例子中，我们声明了函数 isApiError，它用来判断传入的参数是不是 ApiError 类型，为了实现这样一个函数，它的参数的类型肯定得是比较抽象的父类 Error，这样的话这个函数就能接受 Error 或它的子类作为参数了。 但是由于父类 Error 中没有 code 属性，故直接获取 error.code 会报错，需要使用类型断言获取 (error as ApiError).code
 
-  // 2.1 用instanceof代替断言时，有的情况下 ApiError 和 HttpError 不是一个真正的类，而只是一个 TypeScript 的接口（interface），接口是一个类型，不是一个真正的值，它在编译结果中会被删除，当然就无法使用 instanceof 来做运行时判断了
-  // interface ApiError21 extends Error {
-  //   code: number;
-  // }
-  // interface HttpError21 extends Error {
-  //     statusCode: number;
-  // }
-  // function isApiError21(error: Error) {
-  //   if (error instanceof ApiError21) { // 'ApiError21' only refers to a type, but is being used as a value here.
-  //     return true;
-  //   }
-  //   return false;
-  // }
 
 // 3. 将任何一个类型断言为 any
   // 当我们引用一个在此类型上不存在的属性或方法时，就会报错, 这种错误提示显然是非常有用的
@@ -90,10 +77,9 @@
   // ps: 需要注意的是，将一个变量断言为 any 可以说是解决 TypeScript 中类型问题的最后一个手段。 它极有可能掩盖了真正的类型错误，所以如果不是非常确定，就不要使用 as any
 
 // 4. 将 any 断言为一个具体的类型
-  // 在日常的开发中，我们不可避免的需要处理 any 类型的变量，1. 它们可能是由于第三方库未能定义好自己的类型，2. 也有可能是历史遗留的或其他人编写的烂代码，3. 还可能是受到 TypeScript 类型系统的限制而无法精确定义类型的场景。
+  // 在日常的开发中，我们不可避免的需要处理 any 类型的变量，1. 它们可能是由于第三方库未能定义好自己的类型，2. 也有可能是历史遗留的或其他人编写的不良代码，3. 还可能是受到 TypeScript 类型系统的限制而无法精确定义类型的场景。
 
-  // 遇到 any 类型的变量时，我们可以选择无视它，任由它滋生更多的 any。 
-  // 我们也可以选择改进它，通过类型断言及时的把 any 断言为精确的类型，亡羊补牢，使我们的代码向着高可维护性的目标发展。
+  // 遇到 any 类型的变量时，我们可以选择改进它，通过类型断言及时的把 any 断言为精确的类型，亡羊补牢，使我们的代码向着高可维护性的目标发展。
 
   // 举例来说，历史遗留的代码中有个 getCacheData，它的返回值是 any:
   function getCacheData(key: string): any {
@@ -101,15 +87,20 @@
   }
 
   // 那么我们在使用它时，最好能够将调用了它之后的返回值断言成一个精确的类型，这样就方便了后续的操作：
-  function getCacheData41(key: string): any {
-    return (window as any).cache[key];
-  }
   interface Cat {
     name: string;
     run(): void;
   }
   const tom41: Cat = getCacheData('tom') as Cat; // 这样的话明确了 tom41 的类型，后续对 tom41 的访问时就有了代码补全，提高了代码的可维护性
   tom41.run()
+
+
+
+// 断言部分后续内容暂不做介绍，可自行查阅
+
+
+
+
 
 // 二、 类型断言的限制：
   // TypeScript 是结构类型系统，类型之间的对比只会比较它们最终的结构，而会忽略它们定义时的关系。

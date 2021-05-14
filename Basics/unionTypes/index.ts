@@ -1,5 +1,5 @@
 /*
-* 联合类型
+* 4、联合类型
 * 联合类型（Union Types）表示取值可以为多种类型中的一种
 */
 
@@ -9,16 +9,16 @@ myFavorite = 'seven'
 myFavorite = 7
 
 // 2.当 TypeScript 不确定一个联合类型的变量到底是哪个类型的时候，我们只能访问此联合类型的所有类型里共有的属性或方法
-// function getLength(something: string | number): number {
-//   return something.length  // Property 'length' does not exist on type 'string | number'.
-// }
 function getStr(something: string | number): string {
   return something.toString()
 }
+// function getLength(something: string | number): number {
+//   return something.length  // Property 'length' does not exist on type 'string | number'.
+// }
 
 // 3.联合类型的变量在被赋值的时候，会根据类型推论的规则推断出一个类型
 let myFavorite1: string | number
-myFavorite1 = 'seven'
+myFavorite1 = 'seven' // 推论1
 console.log(myFavorite1.length) // 5
-myFavorite1 = 7
+myFavorite1 = 7  // 推论2
 // console.log(myFavorite1.length) // Property 'length' does not exist on type 'number'.

@@ -1,5 +1,5 @@
 /*
-* 数组的类型
+* 6、数组的类型
 * 在 TypeScript 中，数组类型有多种定义方式，比较灵活
 */
 
@@ -12,10 +12,12 @@ let arr1: number[] = [1, 1, 2, 3, 5]
 // let arr11: number[] = [1, '1', 2, 3, 5] //Type 'string' is not assignable to type 'number'
 
 // 1.2
-// let arr12: number[] = [1, 1, 2, 3, 5]
+let arr12: number[] = [1, 1, 2, 3, 5]
 // arr12.push('8')  // Argument of type 'string' is not assignable to parameter of type 'number'
 
-// 2. 用数组泛型表示---Array<elemType> 后续会在进阶系列的泛型Generics介绍
+
+
+// 2. 用数组泛型表示---Array<elemType> 后续会在进阶系列的泛型Generics进行介绍
 let arr2: Array<number> = [1, 1, 2, 3, 5]
 
 // 3. 用接口表示
@@ -53,3 +55,11 @@ function sum2() {
 // 4. 一个比较常见的做法是，用 any 表示数组中允许出现任意类型
 let arr4: any[] = ['xcatliu', 25, { website: 'http://xcatliu.com' }]
 
+
+
+// 总结： 以上介绍了数组的三种表示方式：
+//   1.「类型 + 方括号」表示法--- number[]
+//   2. 泛型表示法 --- Array<elemType>
+//   3. 接口表示法 ---  interface NumberArray {
+//                       [index: number]: number;
+//                     }
