@@ -20,5 +20,8 @@
     "basics-declarationFile": "tsc ./Basics/declarationFile/index.ts"
   },
   "author": "chenrenbin",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^4.2.4"
+  }
 }
